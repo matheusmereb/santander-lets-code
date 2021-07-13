@@ -128,3 +128,20 @@ Em suma, a orientação a objetos no JavaScript não é perfeita. Se você estiv
 Nossa recomendação é não se apoiar demais nesses conceitos de encapsulamento. Geralmente usamos esses conceitos apoiados em convenções dentro do time de programadores para garantir um pouco mais de adequação aos conceitos.
  */
 
+class Quadrado{
+    
+    constructor(lado, altura){
+        this._cor = 'blue';
+        this.lado = lado;
+        this.altura = altura;
+    }
+
+    get cor() { return this._cor; };
+    set cor(cor) { this._cor = cor; };
+}
+
+const quadrado = new Quadrado(3, 4);
+/* quadrado.setColor('red');
+console.log(quadrado.getColor()); */
+quadrado.cor = 'red';
+console.log(quadrado.cor);
