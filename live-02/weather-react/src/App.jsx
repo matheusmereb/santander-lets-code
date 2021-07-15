@@ -16,7 +16,7 @@ export default function App() {
   }
 
   useEffect(() => { 
-    
+
   }, [])
 
   return (
@@ -70,4 +70,3 @@ export default function App() {
     </div>
   )
 }
-
