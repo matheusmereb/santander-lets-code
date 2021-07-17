@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class App extends React.Component {
+export default function App(){
+  const [nome, setNome] = useState(undefined)
+
+  useEffect(
+    () => {
+      if(nome === undefined) {
+        setNome(sessionStorage.getItem('nome') || '')
+      }
+      else{
+        sessionStorage.setItem('nome', nome)
+      }
+    }, [nome]
+  )
+
+  return (
+    <>
+      Nome: <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
+      <br />
+      Olá, {nome}
+    </>
+  )
+}
+
+/* class App extends React.Component {
   
   render(){
     return (
@@ -19,4 +42,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App; */
